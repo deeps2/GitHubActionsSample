@@ -33,9 +33,9 @@ jobs:
 #            ~/.gradle/caches/modules-*
 #            ~/.gradle/caches/jars-*
 #            ~/.gradle/caches/build-cache-*
-            key: ${{ runner.os }}-gradle-${{ hashFiles('checksum.txt') }}
-            restore-keys: |
-              ${{ runner.os }}-gradle-
+          key: ${{ runner.os }}-gradle-${{ hashFiles('checksum.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
 
       - name: Run Unit tests
         run: ./gradlew test --stacktrace
