@@ -11,7 +11,7 @@ public class Foo {
     }
 
     public int multiply2Num(int x, int y) {
-        return x * y;
+        return x * y * y;
     }
 
     public int divide2Num(int x, int y) {
