@@ -14,4 +14,11 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void test_addition() {
+        Foo foo = new Foo();
+        int sum = foo.add2Num(2, 3);
+        assertEquals(5, sum);
+    }
 }
