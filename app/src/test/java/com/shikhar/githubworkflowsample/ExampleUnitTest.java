@@ -26,6 +26,6 @@ public class ExampleUnitTest {
     public void test_subtraction() {
         Foo foo = new Foo();
         int difference = foo.difference2Num(5, 4);
-        assertEquals(2, difference);
+        assertEquals(1, difference);
     }
 }
