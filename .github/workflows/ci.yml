@@ -69,6 +69,10 @@ jobs:
         env:
             SLACK_CHANNE: my-github-action-channel
             SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+#            SLACK_ICON: https://github.com/rtCamp.png?size=48
+            SLACK_MESSAGE: CI Pipeline tasks are completed. Click on the link to see its status.
+            SLACK_TITLE: GitHub Action Status
+            SLACK_USERNAME: CI-BOT
 
 #      - name: Slack Notification Demo
 #        jobs:
