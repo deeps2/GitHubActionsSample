@@ -18,11 +18,31 @@ jobs:
         with:
           java-version: 1.8
 
+      - name: Generate cache key
+        run: ./checksum.sh checksum.txt
+
+      - name: Copy CI gradle.properties
+        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
+
+      - name: Cache Gradle
+        uses: actions/cache@v2
+#        continue-on-error: true # continue if the cache restore/upload fails
+        with:
+          path: ~/.gradle/caches
+#          path: |
+#            ~/.gradle/caches/modules-*
+#            ~/.gradle/caches/jars-*
+#            ~/.gradle/caches/build-cache-*
+            key: ${{ runner.os }}-gradle-${{ hashFiles('checksum.txt') }}
+            restore-keys: |
+              ${{ runner.os }}-gradle-
+
       - name: Run Unit tests
         run: ./gradlew test --stacktrace
 
       - name: Build Debug APK
-        run: bash ./gradlew :app:assembleDebug
+#        run: bash ./gradlew :app:assembleDebug
+        run: ./gradlew spotlessCheck :app:assembleDebug test check --stacktrace
 
       - name: Copy generated APK to its output folder
         uses: actions/upload-artifact@v2
