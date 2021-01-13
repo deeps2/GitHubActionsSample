@@ -45,8 +45,8 @@ jobs:
         run: ./gradlew test --stacktrace
 
       - name: Build Debug APK
-#        run: bash ./gradlew :app:assembleDebug
-        run: ./gradlew spotlessCheck :app:assembleDebug test check --stacktrace
+        run: bash ./gradlew :app:assembleDebug
+#        run: ./gradlew spotlessCheck :app:assembleDebug test check --stacktrace
 
       - name: Copy generated APK to its output folder
         uses: actions/upload-artifact@v2
