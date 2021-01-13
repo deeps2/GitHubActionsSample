@@ -21,4 +21,11 @@ public class ExampleUnitTest {
         int sum = foo.add2Num(2, 3);
         assertEquals(5, sum);
     }
+
+    @Test
+    public void test_subtraction() {
+        Foo foo = new Foo();
+        int difference = foo.difference2Num(5, 4);
+        assertEquals(1, difference);
+    }
 }
