@@ -7,7 +7,7 @@ public class Foo {
     }
 
     public int difference2Num(int x, int y) {
-        return x - y + 1;
+        return x - y;
     }
 
     public int multiply2Num(int x, int y) {
